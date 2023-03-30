@@ -23,7 +23,7 @@ env = environ.Env(
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))    
 
 
 # Quick-start development settings - unsuitable for production
@@ -39,6 +39,13 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+LOCAL_APPS = [
+    "apps.client",
+    "apps.order",
+    "apps.product",
+    "apps.table",
+    "apps.reservation"
+]
 
 THIRD_APPS = [
     'phonenumbers',
@@ -59,7 +66,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-] + THIRD_APPS
+] + THIRD_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
