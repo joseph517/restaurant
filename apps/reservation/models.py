@@ -12,3 +12,7 @@ class Reservation(models.Model):
     fecha_hora_inicio = models.DateTimeField()
     fecha_hora_fin = models.DateTimeField()
     numero_personas = models.IntegerField()
+
+    class Meta:
+        verbose_name = "Reservacion"
+        verbose_name_plural = "Reservaciones"
