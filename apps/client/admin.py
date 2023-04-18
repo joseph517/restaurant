@@ -8,7 +8,7 @@ from .models import Client
 @register(Client)
 class ClientAdmin(ModelAdmin):
     list_display = (
-        'id_cliente',
+        'id',
         'nombre',
         'apellido',
         'correo_electronico',

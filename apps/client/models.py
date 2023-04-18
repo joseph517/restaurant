@@ -32,7 +32,7 @@ class CustomUserManager(BaseUserManager):
 
 class Client(AbstractBaseUser, PermissionsMixin):
 
-    id_cliente = models.AutoField(
+    id = models.AutoField(
         primary_key=True,
         null=False,
         blank=False,
@@ -56,14 +56,22 @@ class Client(AbstractBaseUser, PermissionsMixin):
     correo_electronico = models.EmailField(unique=True)
 
     numero_telefono = PhoneNumberField(
-        max_length=10,
         verbose_name="Celular",
         null=False,
         blank=False,
         unique=True
     )
     is_active = models.BooleanField(default=True)
+
     is_staff = models.BooleanField(default=False)
+
+    password = models.CharField(
+        max_length=128, 
+        null=False, 
+        blank=False,
+        default=None,
+    )
+
 
     class Meta:
         verbose_name = 'Cliente'
