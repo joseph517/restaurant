@@ -55,3 +55,8 @@ class ClientUpdateSerializer(ClientSerializer):
             "correo_electronico": {"required": False},
             "numero_telefono": {"required": False},
         }
+
+class DeleteClientSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Client
+        fields = '__all__'
