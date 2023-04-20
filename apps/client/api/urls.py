@@ -1,10 +1,8 @@
 from django.urls import path
-from .views import protected_view
-from .views import CreateClientView
+from .views import CreateClientView, UpdateClientView
 
 
 urlpatterns = [
-    path('protected/', protected_view, name='protected_view'),
     path('create_client/', CreateClientView.as_view(), name='create client'),
-
+    path('update/<int:pk>/', UpdateClientView.as_view(), name='client-update'),
 ]

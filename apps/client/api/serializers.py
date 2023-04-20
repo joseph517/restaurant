@@ -46,3 +46,12 @@ class ClientSerializer(serializers.ModelSerializer):
             password=validated_data['password'],
         )
         return client
+    
+
+class ClientUpdateSerializer(ClientSerializer):
+    class Meta(ClientSerializer.Meta):
+        extra_kwargs = {
+            "apellido": {"required": False},
+            "correo_electronico": {"required": False},
+            "numero_telefono": {"required": False},
+        }

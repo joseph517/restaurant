@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.urls import path, include
-from apps.client.api.views import TokenObtainPairView, TokenRefreshView, protected_view
+from apps.client.api.views import TokenObtainPairView, TokenRefreshView
 
 
 urlpatterns = [
@@ -24,6 +24,5 @@ urlpatterns = [
     path('api/client/', include('apps.client.api.urls')),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/protected/', protected_view, name='protected_view'),
 
 ]
